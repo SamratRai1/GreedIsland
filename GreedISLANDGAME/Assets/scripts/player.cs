@@ -9,12 +9,17 @@ public class player : MonoBehaviour
     private Rigidbody2D body;
     Animator anim;
     private bool grounded;
+
+    private Vector3 respawnPoint;
+    public GameObject Falldetector;
+
     // Start is called before the first frame update
-  
+    
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        respawnPoint=transform.position;
     }
     // Update is called once per frame
     void Update()
@@ -29,7 +34,7 @@ public class player : MonoBehaviour
             Jump();
         anim.SetBool("isWalking", horizontalInput != 0);
         anim.SetBool("grounded",grounded);
-        
+        //Falldetector.transform.position=new Vector2(transform.position.x, Falldetector.transform.position.y);
     }
     private void Jump()
     {
@@ -39,7 +44,22 @@ public class player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
+        {
             grounded = true;
+        }
+        if (collision.gameObject.tag == "FallDetector" || collision.gameObject.tag == "Trap")
+        {
+            transform.position = respawnPoint;
+        }
+        
+
     }
- 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "CheckPoint")
+        {
+            respawnPoint = transform.position;
+        }
+    }
+
 }

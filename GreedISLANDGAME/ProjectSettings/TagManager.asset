@@ -9,6 +9,8 @@ TagManager:
   - SilverCoin
   - Trap
   - Ground
+  - FallDetector
+  - CheckPoint
   layers:
   - Default
   - TransparentFX

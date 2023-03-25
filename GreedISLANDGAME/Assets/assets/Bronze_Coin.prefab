@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5186929463297902960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 748024939099955445}
+  m_Layer: 0
+  m_Name: Bronze_Coin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &748024939099955445
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5186929463297902960}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.15, y: -2.65, z: -0.029590886}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3549742933259464862}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &4013441192011575153
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 748024939099955445}
+    m_Modifications:
+    - target: {fileID: 500361233063944175, guid: 46566dade153be544a69322ce0540360, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 500361233063944175, guid: 46566dade153be544a69322ce0540360, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 500361233063944175, guid: 46566dade153be544a69322ce0540360, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 500361233063944175, guid: 46566dade153be544a69322ce0540360, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 500361233063944175, guid: 46566dade153be544a69322ce0540360, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 500361233063944175, guid: 46566dade153be544a69322ce0540360, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 500361233063944175, guid: 46566dade153be544a69322ce0540360, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 500361233063944175, guid: 46566dade153be544a69322ce0540360, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 500361233063944175, guid: 46566dade153be544a69322ce0540360, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 500361233063944175, guid: 46566dade153be544a69322ce0540360, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 500361233063944175, guid: 46566dade153be544a69322ce0540360, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003191688874236802, guid: 46566dade153be544a69322ce0540360, type: 3}
+      propertyPath: m_Name
+      value: BronzeCoin
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003191688874236802, guid: 46566dade153be544a69322ce0540360, type: 3}
+      propertyPath: m_TagString
+      value: BronzeCoin
+      objectReference: {fileID: 0}
+    - target: {fileID: 6560067822957568971, guid: 46566dade153be544a69322ce0540360, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 46566dade153be544a69322ce0540360, type: 3}
+--- !u!1 &2170701407693583603 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3003191688874236802, guid: 46566dade153be544a69322ce0540360, type: 3}
+  m_PrefabInstance: {fileID: 4013441192011575153}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2715196012763117728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2170701407693583603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faace9368bfbdbb4d9649712b0fc3447, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 1
+--- !u!4 &3549742933259464862 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 500361233063944175, guid: 46566dade153be544a69322ce0540360, type: 3}
+  m_PrefabInstance: {fileID: 4013441192011575153}
+  m_PrefabAsset: {fileID: 0}
