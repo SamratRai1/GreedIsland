@@ -21,7 +21,7 @@ public class projectile : MonoBehaviour
     void Update()
     {
         if (hit) return;
-        float movementSpeed = speed * Time.deltaTime;
+        float movementSpeed = speed * Time.deltaTime*direction;
         transform.Translate(movementSpeed, 0, 0);
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -32,7 +32,7 @@ public class projectile : MonoBehaviour
 
     }
     public void SetDirection(float _direction)
-    {
+    { 
         direction = _direction;
         gameObject.SetActive(true);
         hit= false;

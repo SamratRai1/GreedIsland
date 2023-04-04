@@ -18,24 +18,23 @@ public class health : MonoBehaviour
         CurrentHealth = Mathf.Clamp(CurrentHealth - _damage, 0, startingHealth);
         if (CurrentHealth > 0)
         {
-            anim.SetTrigger("respawn");
+            //anim.SetTrigger("hurt");
         }
         else
         {
             //player dead
             if (!dead) {
                 anim.SetTrigger("die");
+                GetComponent<player>().enabled= false;
                 dead= true;
             }
           
         }
     }
+    public void AddHealth(float _value)
+    {
+        CurrentHealth=Mathf.Clamp(CurrentHealth+_value, 0, startingHealth);
+    }
     /// Update is called once per frame
-    //private void Update()
-   // {
-     //   if (Input.GetKeyDown(KeyCode.E)) {
-      //      TakeDamage(1);
-    //
-        //}
-   // }
+    
 }

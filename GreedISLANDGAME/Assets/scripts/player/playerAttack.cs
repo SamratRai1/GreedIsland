@@ -9,18 +9,18 @@ public class playerAttack : MonoBehaviour
     [SerializeField] private GameObject[] arrows;
     private Animator anim;
     private player playerMovement;
-    private float cooldownTimer=Mathf.Infinity;
+    private float cooldownTimer =Mathf.Infinity;
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         anim=GetComponent<Animator>();
         playerMovement = GetComponent<player>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Input.GetMouseButton(0)&&cooldownTimer>attackCoolDown)
+        if (Input.GetMouseButton(0) && cooldownTimer> attackCoolDown && playerMovement.canAttack() )
         {
             Attack();
         }
