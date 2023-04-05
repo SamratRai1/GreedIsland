@@ -49,8 +49,9 @@ public class player : MonoBehaviour
                 Jump();
             anim.SetBool("isWalking", horizontalInput != 0);
             anim.SetBool("grounded", grounded);
-            //Falldetector.transform.position=new Vector2(transform.position.x, Falldetector.transform.position.y);
+        //Falldetector.transform.position=new Vector2(transform.position.x, Falldetector.transform.position.y);
         //}
+
     }
     private void Jump()
     {
@@ -80,11 +81,12 @@ public class player : MonoBehaviour
     }
     public bool canAttack()
     {
-       if( horizontalInput == 0)
+        horizontalInput = Input.GetAxis("Horizontal");
+        if (horizontalInput == 0)
         {
             return false;
         }
         return true;
-    } 
+    }
 
 }

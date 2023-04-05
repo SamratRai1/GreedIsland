@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3952578312542493735, guid: 969df3d89e7b2114e84c5107be6f2ad6, type: 3}
       propertyPath: m_Name
-      value: Fan (1)
+      value: Fan Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3952578313019377828, guid: 969df3d89e7b2114e84c5107be6f2ad6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -71,6 +71,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 95470759, guid: fb5c2ebac8d696e4488abdf71a00f470, type: 3}
+    - target: {fileID: 3952578313890295991, guid: 969df3d89e7b2114e84c5107be6f2ad6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.251
+      objectReference: {fileID: 0}
     - target: {fileID: 3952578313890295991, guid: 969df3d89e7b2114e84c5107be6f2ad6, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
