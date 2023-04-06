@@ -4,6 +4,7 @@ using UnityEngine;
 public class shootingItem : MonoBehaviour
 {
     public float speed;
+  
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
@@ -17,6 +18,10 @@ public class shootingItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(transform.right * transform.localScale.x * speed * Time.deltaTime);
+        GameObject objects = GameObject.FindGameObjectWithTag("Player");
+        player player = objects.GetComponent<player>();
+        transform.Translate(transform.right * transform.localScale.x * player.Arrowspeed * Time.deltaTime);
     }
+    
 }
+

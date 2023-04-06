@@ -16,17 +16,17 @@ public class health : MonoBehaviour
     public void TakeDamage(float _damage)
     {
         CurrentHealth = Mathf.Clamp(CurrentHealth - _damage, 0, startingHealth);
-        if (CurrentHealth > 0)
+        if (CurrentHealth <1)
         {
-            //anim.SetTrigger("hurt");
-        }
-        else
-        {
+            
             //player dead
             if (!dead) {
                 anim.SetTrigger("die");
                 GetComponent<player>().enabled= false;
-                dead= true;
+                GetComponent<shooting>().enabled = false;
+                GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+                //transform.position = transform.position;
+                dead = true;
             }
           
         }
@@ -35,6 +35,5 @@ public class health : MonoBehaviour
     {
         CurrentHealth=Mathf.Clamp(CurrentHealth+_value, 0, startingHealth);
     }
-    /// Update is called once per frame
     
 }

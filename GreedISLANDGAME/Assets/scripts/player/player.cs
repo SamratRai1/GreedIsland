@@ -6,14 +6,13 @@ using UnityEngine;
 public class player : MonoBehaviour
 {
     [SerializeField] private float speed;
-    //[SerializeField] private health playerHealth;
     private Rigidbody2D body;
     Animator anim;
     private bool grounded;
     private float horizontalInput;
     private Vector3 respawnPoint;
     public GameObject Falldetector;
-
+    public float Arrowspeed;
     // Start is called before the first frame update
     
     private void Awake()
@@ -22,18 +21,8 @@ public class player : MonoBehaviour
         anim = GetComponent<Animator>();
         respawnPoint=transform.position;
     }
-    /*private bool playerDead()
-    {
-        if (playerHealth.CurrentHealth > 0)
-        {
-            return false;
-
-        }
-        else
-        {
-            return true;
-        }
-    }*/
+    
+    
     // Update is called once per frame
     void Update()
     {
@@ -49,8 +38,7 @@ public class player : MonoBehaviour
                 Jump();
             anim.SetBool("isWalking", horizontalInput != 0);
             anim.SetBool("grounded", grounded);
-        //Falldetector.transform.position=new Vector2(transform.position.x, Falldetector.transform.position.y);
-        //}
+      
 
     }
     private void Jump()

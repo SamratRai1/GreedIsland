@@ -45,21 +45,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
+  - name: Backgroundscenary
     uniqueID: 1432240995
     locked: 0
-  - name: background2
+  - name: background
     uniqueID: 3536350237
-    locked: 0
-  - name: background3
-    uniqueID: 2887405111
-    locked: 0
-  - name: background4
-    uniqueID: 3230994951
     locked: 0
   - name: traps
     uniqueID: 66529265
     locked: 0
+  - name: foreground
+    uniqueID: 313577071
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: player
+    uniqueID: 1216959637
+    locked: 0
+  - name: hiddenlayer
+    uniqueID: 2537434223
     locked: 0
