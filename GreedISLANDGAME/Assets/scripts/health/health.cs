@@ -33,6 +33,7 @@ public class health : MonoBehaviour
     }
     public void AddHealth(float _value)
     {
+        
         CurrentHealth=Mathf.Clamp(CurrentHealth+_value, 0, startingHealth);
     }
     

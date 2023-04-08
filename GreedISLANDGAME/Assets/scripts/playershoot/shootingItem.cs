@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class shootingItem : MonoBehaviour
 {
-    public float speed;
+    
   
     private void OnTriggerEnter2D(Collider2D collision)
     {

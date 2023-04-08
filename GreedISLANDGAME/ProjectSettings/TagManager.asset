@@ -11,6 +11,7 @@ TagManager:
   - Ground
   - FallDetector
   - CheckPoint
+  - ArrowFasterCollectible
   layers:
   - Default
   - TransparentFX

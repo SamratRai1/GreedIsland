@@ -153,7 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   Falldetector: {fileID: 0}
-  Arrowspeed: 5
+  Arrowspeed: 20
 --- !u!95 &6454667444363766976
 Animator:
   serializedVersion: 4
