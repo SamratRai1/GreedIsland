@@ -12,6 +12,7 @@ TagManager:
   - FallDetector
   - CheckPoint
   - ArrowFasterCollectible
+  - weakpoint
   layers:
   - Default
   - TransparentFX

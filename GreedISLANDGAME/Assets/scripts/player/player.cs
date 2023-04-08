@@ -57,7 +57,6 @@ public class player : MonoBehaviour
         {
             transform.position = respawnPoint;
         }
-        
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -66,6 +65,7 @@ public class player : MonoBehaviour
         {
             respawnPoint = transform.position;
         }
+       
     }
     public bool canAttack()
     {

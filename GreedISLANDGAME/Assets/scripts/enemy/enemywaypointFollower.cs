@@ -6,27 +6,49 @@ public class enemywaypointFollower : MonoBehaviour
 {
     [SerializeField] private GameObject[] waypoints;
     private int currentWaypointIndex = 0;
-    [SerializeField] private float speed = 2f;
+    [SerializeField] private float speed = 1f;
     private int flipper;
+    public Transform playerTransform;
+    public bool isChasing;
+    public float chaseDistance;
     // Update is called once per frame
-    void Update() 
+    void Update()
     {
-     if (Vector2.Distance(waypoints[currentWaypointIndex].transform.position, transform.position) < .1f)
+        if (isChasing)
         {
-            currentWaypointIndex++;
-            if (currentWaypointIndex>=waypoints.Length)
+            if(transform.position.x>playerTransform.position.x)
             {
-                currentWaypointIndex = 0;
-                
+                transform.localScale = new Vector3(4, 4, 4);
+                transform.position += Vector3.left*speed*Time.deltaTime;
             }
-            if (flipper > 0)
+            if (transform.position.x < playerTransform.position.x)
             {
-                Vector3 theScale = transform.localScale;
-                theScale.x *= -1;
-                transform.localScale = theScale;
+                transform.localScale = new Vector3(-4, 4, 4);
+                transform.position += Vector3.right * speed * Time.deltaTime;
             }
-            flipper += 1;
         }
-        transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, Time.deltaTime * speed);
+        else
+        {
+            if (Vector2.Distance(transform.position, playerTransform.position)<chaseDistance) {
+                isChasing = true;
+            }
+            if (Vector2.Distance(waypoints[currentWaypointIndex].transform.position, transform.position) < .1f)
+            {
+                currentWaypointIndex++;
+                if (currentWaypointIndex >= waypoints.Length)
+                {
+                    currentWaypointIndex = 0;
+
+                }
+                if (flipper > 0)
+                {
+                    Vector3 theScale = transform.localScale;
+                    theScale.x *= -1;
+                    transform.localScale = theScale;
+                }
+                flipper += 1;
+            }
+            transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, Time.deltaTime * speed);
+        }
     }
 }
