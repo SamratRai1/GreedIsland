@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class health : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
     public float CurrentHealth { get; private set; }
     private Animator anim;
+    public GameObject deatPanel;
     private bool dead;
     private void Awake()
     {
@@ -21,12 +23,14 @@ public class health : MonoBehaviour
             
             //player dead
             if (!dead) {
-                anim.SetTrigger("die");
+                //anim.SetTrigger("die");
                 GetComponent<player>().enabled= false;
                 GetComponent<shooting>().enabled = false;
                 GetComponent<Rigidbody2D>().velocity = Vector3.zero;
                 //transform.position = transform.position;
                 dead = true;
+                deatPanel.SetActive(true);
+                anim.SetTrigger("die");
             }
           
         }
@@ -36,5 +40,14 @@ public class health : MonoBehaviour
         
         CurrentHealth=Mathf.Clamp(CurrentHealth+_value, 0, startingHealth);
     }
-    
+    public void ReplayLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
+    }
+    public void MainMenus()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("MainMenu");
+    }
 }

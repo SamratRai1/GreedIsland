@@ -8,30 +8,10 @@ public class enemywaypointFollower : MonoBehaviour
     private int currentWaypointIndex = 0;
     [SerializeField] private float speed = 1f;
     private int flipper;
-    public Transform playerTransform;
-    public bool isChasing;
-    public float chaseDistance;
     // Update is called once per frame
     void Update()
     {
-        if (isChasing)
-        {
-            if(transform.position.x>playerTransform.position.x)
-            {
-                transform.localScale = new Vector3(4, 4, 4);
-                transform.position += Vector3.left*speed*Time.deltaTime;
-            }
-            if (transform.position.x < playerTransform.position.x)
-            {
-                transform.localScale = new Vector3(-4, 4, 4);
-                transform.position += Vector3.right * speed * Time.deltaTime;
-            }
-        }
-        else
-        {
-            if (Vector2.Distance(transform.position, playerTransform.position)<chaseDistance) {
-                isChasing = true;
-            }
+       
             if (Vector2.Distance(waypoints[currentWaypointIndex].transform.position, transform.position) < .1f)
             {
                 currentWaypointIndex++;
@@ -49,6 +29,6 @@ public class enemywaypointFollower : MonoBehaviour
                 flipper += 1;
             }
             transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, Time.deltaTime * speed);
-        }
+        
     }
 }

@@ -15,11 +15,16 @@ public class CoinCounter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        coinText.text = "Coins: " + currentCoins.ToString();
+        if (PlayerPrefs.HasKey("TotalCoins"))
+        {
+            currentCoins = PlayerPrefs.GetInt("TotalCoins");
+        }
+        coinText.text = ": " + currentCoins.ToString();
     }
     public void IncreaseCoins(int v)
     {
         currentCoins+= v;
-        coinText.text="Coins: "+currentCoins.ToString();
+        coinText.text=": "+currentCoins.ToString();
+        PlayerPrefs.SetInt("TotalCoins", currentCoins);
     }
 }

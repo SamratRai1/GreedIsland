@@ -13,6 +13,7 @@ public class player : MonoBehaviour
     private Vector3 respawnPoint;
     public GameObject Falldetector;
     public float Arrowspeed;
+    public GameObject pausePanel;
     // Start is called before the first frame update
     
     private void Awake()
@@ -75,6 +76,18 @@ public class player : MonoBehaviour
             return false;
         }
         return true;
+    }
+    public void PauseGame()
+    {
+        Debug.Log("Freezing time");
+        pausePanel.SetActive(true);
+        Time.timeScale = 0;
+    }
+    public void ResumeGame()
+    {
+        Debug.Log("Freezing time");
+        pausePanel.SetActive(false);
+        Time.timeScale = 1;
     }
 
 }

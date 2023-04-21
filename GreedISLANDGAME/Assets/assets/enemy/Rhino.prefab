@@ -42,11 +42,12 @@ GameObject:
   - component: {fileID: 6694243180179133091}
   - component: {fileID: 5127512490381882641}
   - component: {fileID: 1426818566612494013}
-  - component: {fileID: 5886408908069527277}
   - component: {fileID: 5198398642966144714}
   - component: {fileID: 8584693364137185238}
   - component: {fileID: 5395376986494194609}
-  - component: {fileID: 6667267529455762357}
+  - component: {fileID: 4444077634208003208}
+  - component: {fileID: 2003528250401935610}
+  - component: {fileID: 1054640169541972700}
   m_Layer: 0
   m_Name: rhino
   m_TagString: Trap
@@ -142,25 +143,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5886408908069527277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3175081306100023871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20bb51e209e0b03429ba7af96312e0c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 435595925921474845}
-  - {fileID: 3704449675098025707}
-  speed: 2
-  playerTransform: {fileID: 0}
-  isChasing: 0
-  chaseDistance: 0
 --- !u!114 &5198398642966144714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +209,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!50 &6667267529455762357
+--- !u!114 &4444077634208003208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3175081306100023871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28874e74f3168f1448bec356c7177b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDistance: 20
+  playerTransform: {fileID: 0}
+  speed: 1
+--- !u!114 &2003528250401935610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3175081306100023871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7401ac04918d03a48830707e2d5e2704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 435595925921474845}
+  speed: 1
+--- !u!50 &1054640169541972700
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
