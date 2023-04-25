@@ -10,10 +10,16 @@ public class health : MonoBehaviour
     private Animator anim;
     public GameObject deatPanel;
     private bool dead;
+    AudioManager audioManager;
+   
+       
+
     private void Awake()
     {
         CurrentHealth = startingHealth;
         anim = GetComponent<Animator>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
     }
     public void TakeDamage(float _damage)
     {
@@ -31,6 +37,7 @@ public class health : MonoBehaviour
                 dead = true;
                 deatPanel.SetActive(true);
                 anim.SetTrigger("die");
+                
             }
           
         }
@@ -38,15 +45,21 @@ public class health : MonoBehaviour
     public void AddHealth(float _value)
     {
         
-        CurrentHealth=Mathf.Clamp(CurrentHealth+_value, 0, startingHealth);
+        CurrentHealth =Mathf.Clamp(CurrentHealth+_value, 0, startingHealth);
+        if (_value > 0)
+        {
+            audioManager.PlayeSfx(audioManager.playerHeal);
+        }
     }
     public void ReplayLevel()
     {
+        audioManager.PlayeSfx(audioManager.resume);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
     }
     public void MainMenus()
     {
+        audioManager.PlayeSfx(audioManager.buttonSelect);
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
     }

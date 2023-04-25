@@ -6,6 +6,7 @@ public class enemyshootingitemup : MonoBehaviour
 {
 
     public float speed;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.GetComponent<shootAction>())
@@ -19,7 +20,8 @@ public class enemyshootingitemup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            transform.Translate(transform.up * transform.localScale.x * speed * Time.deltaTime);
+       
+        transform.Translate(transform.up * transform.localScale.x * speed * Time.deltaTime);
         
 
     }

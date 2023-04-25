@@ -13,6 +13,7 @@ TagManager:
   - CheckPoint
   - ArrowFasterCollectible
   - weakpoint
+  - Audio
   layers:
   - Default
   - TransparentFX

@@ -14,6 +14,7 @@ public class player : MonoBehaviour
     public GameObject Falldetector;
     public float Arrowspeed;
     public GameObject pausePanel;
+    AudioManager audioManager;
     // Start is called before the first frame update
     
     private void Awake()
@@ -21,6 +22,7 @@ public class player : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         respawnPoint=transform.position;
+        audioManager=GameObject.FindGameObjectWithTag("Audio").GetComponent <AudioManager>();
     }
     
     
@@ -31,12 +33,20 @@ public class player : MonoBehaviour
         //{
             horizontalInput = Input.GetAxis("Horizontal");
             body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
-            if (horizontalInput > 0.01f)
-                transform.localScale = new Vector3(0.35476f, 0.35476f, 0.35476f);
-            else if (horizontalInput < -.01f)
-                transform.localScale = new Vector3(-0.35476f, 0.35476f, 0.35476f);
-            if (Input.GetKey(KeyCode.Space) && grounded)
-                Jump();
+        if (horizontalInput > 0.01f)
+        {
+            transform.localScale = new Vector3(0.35476f, 0.35476f, 0.35476f);
+        }
+        else if (horizontalInput < -.01f)
+        {
+            transform.localScale = new Vector3(-0.35476f, 0.35476f, 0.35476f);
+        }
+        if (Input.GetKey(KeyCode.Space) && grounded)
+        {
+            Jump();
+
+            audioManager.PlayeSfx(audioManager.playerJump);
+        }
             anim.SetBool("isWalking", horizontalInput != 0);
             anim.SetBool("grounded", grounded);
       
@@ -56,6 +66,7 @@ public class player : MonoBehaviour
         }
         if (collision.gameObject.tag == "FallDetector" || collision.gameObject.tag == "Trap" )
         {
+            audioManager.PlayeSfx(audioManager.playerDeath);
             transform.position = respawnPoint;
         }
 
@@ -79,12 +90,14 @@ public class player : MonoBehaviour
     }
     public void PauseGame()
     {
+        audioManager.PlayeSfx(audioManager.pause);
         Debug.Log("Freezing time");
         pausePanel.SetActive(true);
         Time.timeScale = 0;
     }
     public void ResumeGame()
     {
+        audioManager.PlayeSfx(audioManager.resume);
         Debug.Log("Freezing time");
         pausePanel.SetActive(false);
         Time.timeScale = 1;

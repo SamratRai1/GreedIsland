@@ -5,9 +5,16 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class playerLevel : MonoBehaviour
 {
+    AudioManager audioManager;
     public Button[] lvlButtons;
     private int levelAT;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     // Start is called before the first frame update
+
     void Start()
     {
         levelAT = PlayerPrefs.GetInt("LevelUnlocked", 3);
@@ -22,18 +29,22 @@ public class playerLevel : MonoBehaviour
     }
     public void Level1()
     {
+        audioManager.PlayeSfx(audioManager.buttonSelect);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+2);
     }
     public void Level2()
     {
+        audioManager.PlayeSfx(audioManager.buttonSelect);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
     }
     public void Level3()
     {
+        audioManager.PlayeSfx(audioManager.buttonSelect);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
     }
     public void MainMenu()
     {
+        audioManager.PlayeSfx(audioManager.buttonSelect);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex-1 );
     }
 

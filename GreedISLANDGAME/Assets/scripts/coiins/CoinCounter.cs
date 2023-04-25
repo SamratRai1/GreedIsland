@@ -7,9 +7,11 @@ public class CoinCounter : MonoBehaviour
     public static CoinCounter instance;
     public TMP_Text coinText;
     public int currentCoins = 0;
+    AudioManager audioManager;
     void Awake()
     {
-        instance = this; 
+        instance = this;
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     // Start is called before the first frame update
@@ -23,7 +25,8 @@ public class CoinCounter : MonoBehaviour
     }
     public void IncreaseCoins(int v)
     {
-        currentCoins+= v;
+        audioManager.PlayeSfx(audioManager.coinCollect);
+        currentCoins += v;
         coinText.text=": "+currentCoins.ToString();
         PlayerPrefs.SetInt("TotalCoins", currentCoins);
     }

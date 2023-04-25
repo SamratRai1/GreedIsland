@@ -9,13 +9,11 @@ public class enemyshooting : MonoBehaviour
     public bool canShoot = true;
     [SerializeField] private float attackCoolDown;
     private float cooldownTimer = Mathf.Infinity;
+    AudioManager audioManager;
 
     public Transform player;
     public Transform self;
-    private void Awake()
-    {
-      
-    }
+   
     private void Update()
     {
         float distance = Vector2.Distance(player.position, self.position);
@@ -23,6 +21,7 @@ public class enemyshooting : MonoBehaviour
         //  if(Input.GetKeyDown(KeyCode.Return)) {
         if (cooldownTimer>attackCoolDown & distance<8) { 
             Shoot();
+          
         }
         cooldownTimer += Time.deltaTime;
     }
