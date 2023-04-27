@@ -15,6 +15,7 @@ public class player : MonoBehaviour
     public float Arrowspeed;
     public GameObject pausePanel;
     AudioManager audioManager;
+    GameObject players;
     // Start is called before the first frame update
     
     private void Awake()
@@ -23,6 +24,8 @@ public class player : MonoBehaviour
         anim = GetComponent<Animator>();
         respawnPoint=transform.position;
         audioManager=GameObject.FindGameObjectWithTag("Audio").GetComponent <AudioManager>();
+        players = GameObject.FindWithTag("Player");
+        
     }
     
     
@@ -49,8 +52,24 @@ public class player : MonoBehaviour
         }
             anim.SetBool("isWalking", horizontalInput != 0);
             anim.SetBool("grounded", grounded);
-      
 
+        if (players != null)
+        {
+            health health = players.GetComponent<health>();
+            if (health != null)
+            {
+                
+                if (health.CurrentHealth < health.startHealth())
+                {
+                    CoinCounter coins=players.GetComponent<CoinCounter>();
+                    if (coins.currentCoins > 100)
+                    {
+                        coins.DecreaseCoins(100);
+                        health.AddHealth(1);
+                    }
+                }
+            }
+        }
     }
     private void Jump()
     {

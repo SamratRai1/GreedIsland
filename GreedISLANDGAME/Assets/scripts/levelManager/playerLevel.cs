@@ -31,21 +31,32 @@ public class playerLevel : MonoBehaviour
     {
         audioManager.PlayeSfx(audioManager.buttonSelect);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+2);
+        canvasloader();
     }
     public void Level2()
     {
         audioManager.PlayeSfx(audioManager.buttonSelect);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
+        canvasloader();
     }
     public void Level3()
     {
         audioManager.PlayeSfx(audioManager.buttonSelect);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
+        canvasloader();
     }
     public void MainMenu()
     {
         audioManager.PlayeSfx(audioManager.buttonSelect);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex-1 );
+    }
+    private void canvasloader()
+    {
+        GameObject objToReactivate = GameObject.FindGameObjectWithTag("GameCanvas");
+        if (objToReactivate != null)
+        {
+            objToReactivate.SetActive(true);
+        }
     }
 
 }

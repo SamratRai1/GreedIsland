@@ -30,4 +30,10 @@ public class CoinCounter : MonoBehaviour
         coinText.text=": "+currentCoins.ToString();
         PlayerPrefs.SetInt("TotalCoins", currentCoins);
     }
+    public void DecreaseCoins(int v)
+    {
+        currentCoins -= v;
+        coinText.text = ": " + currentCoins.ToString();
+        PlayerPrefs.SetInt("TotalCoins", currentCoins);
+    }
 }

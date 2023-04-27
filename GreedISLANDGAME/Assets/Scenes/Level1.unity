@@ -11847,6 +11847,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6281882890192176272, guid: 1fc4cb4a01979394c919a5405b52584f, type: 3}
+      propertyPath: m_TagString
+      value: GameCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 6281882890192176276, guid: 1fc4cb4a01979394c919a5405b52584f, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -11981,23 +11985,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fc4cb4a01979394c919a5405b52584f, type: 3}
---- !u!1 &2108675079 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6281882890192176272, guid: 1fc4cb4a01979394c919a5405b52584f, type: 3}
-  m_PrefabInstance: {fileID: 2108675078}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2108675080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2108675079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d968a5ae2d4908e478f9f46bf878cae5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &2108675081 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6281882890192176276, guid: 1fc4cb4a01979394c919a5405b52584f, type: 3}

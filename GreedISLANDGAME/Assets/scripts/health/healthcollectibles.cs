@@ -5,7 +5,7 @@ using UnityEngine;
 public class healthcollectibles : MonoBehaviour
 {
     [SerializeField] private float healthValue;
-    public string name;
+    public string names;
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,7 +14,7 @@ public class healthcollectibles : MonoBehaviour
             
 
             collision.GetComponent<health>().AddHealth(healthValue);
-            if (name == "collectible")
+            if (names == "collectible")
             {
                 gameObject.SetActive(false);
             }

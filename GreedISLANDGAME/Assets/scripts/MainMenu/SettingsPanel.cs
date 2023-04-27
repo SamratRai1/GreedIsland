@@ -29,6 +29,7 @@ public class SettingsPanel : MonoBehaviour
         audioManager.PlayeSfx(audioManager.buttonSelect);
         PlayerPrefs.DeleteAll();
         resetPanel.SetActive(false);
+        audioPanel.SetActive(true);
     }
     public void resetCancel()
     {

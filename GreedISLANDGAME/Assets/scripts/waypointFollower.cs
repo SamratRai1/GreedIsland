@@ -28,16 +28,18 @@ public class waypointFollower : MonoBehaviour
             //theScale.x *= -1;
             //transform.localScale = theScale;
             //}
-            if (bot == true)
+            
+        }
+        if (bot == true)
+        {
+            if (transform.position.x > waypoints[currentWaypointIndex].transform.position.x)
             {
-                if (transform.position.x > waypoints[currentWaypointIndex].transform.position.x)
-                {
-                    transform.localScale = new Vector3(4, 4, 4);
-                }
-                if (transform.position.x < waypoints[currentWaypointIndex].transform.position.x)
-                {
-                    transform.localScale = new Vector3(-4, 4, 4);
-                }
+
+                transform.localScale = new Vector3(4, 4, 4);
+            }
+            if (transform.position.x < waypoints[currentWaypointIndex].transform.position.x)
+            {
+                transform.localScale = new Vector3(-4, 4, 4);
             }
         }
         transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, Time.deltaTime * speed);

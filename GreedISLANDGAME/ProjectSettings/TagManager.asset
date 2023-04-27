@@ -14,6 +14,7 @@ TagManager:
   - ArrowFasterCollectible
   - weakpoint
   - Audio
+  - GameCanvas
   layers:
   - Default
   - TransparentFX

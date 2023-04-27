@@ -12,7 +12,10 @@ public class health : MonoBehaviour
     private bool dead;
     AudioManager audioManager;
    
-       
+     public float startHealth()
+    {
+        return startingHealth;
+    }
 
     private void Awake()
     {
@@ -59,6 +62,11 @@ public class health : MonoBehaviour
     }
     public void MainMenus()
     {
+        GameObject objToDeactivate = GameObject.FindGameObjectWithTag("GameCanvas");
+        if (objToDeactivate != null)
+        {
+            objToDeactivate.SetActive(false);
+        }
         audioManager.PlayeSfx(audioManager.buttonSelect);
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
