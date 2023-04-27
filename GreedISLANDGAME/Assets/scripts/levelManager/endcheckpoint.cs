@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class endcheckpoint : MonoBehaviour
 {
-    public int nextSceneload;
+    private int nextSceneload;
     // Start is called before the first frame update
     private void Start()
     {
@@ -14,7 +14,7 @@ public class endcheckpoint : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") == true)
         {
             {
-                if (SceneManager.GetActiveScene().buildIndex == 4)
+                if (SceneManager.GetActiveScene().buildIndex == 5)
                 {
                     Debug.Log("Game Ends");
                 }

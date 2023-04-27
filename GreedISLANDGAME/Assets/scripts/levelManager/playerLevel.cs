@@ -42,7 +42,7 @@ public class playerLevel : MonoBehaviour
     public void Level3()
     {
         audioManager.PlayeSfx(audioManager.buttonSelect);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
         canvasloader();
     }
     public void MainMenu()

@@ -11,7 +11,7 @@ public class player : MonoBehaviour
     private bool grounded;
     private float horizontalInput;
     private Vector3 respawnPoint;
-    public GameObject Falldetector;
+    //public GameObject Falldetector;
     public float Arrowspeed;
     public GameObject pausePanel;
     AudioManager audioManager;

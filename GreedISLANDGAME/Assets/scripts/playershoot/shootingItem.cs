@@ -7,10 +7,13 @@ public class shootingItem : MonoBehaviour
     {
         if (collision.tag == "Player")
             return;
-
+        
         if (collision.GetComponent<shootAction>())
              collision.GetComponent<shootAction>().Action();
-        Destroy(gameObject);
+        if (collision.tag != "CheckPoint" & collision.tag != "notice")
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame

@@ -18,7 +18,7 @@ public class platformfall : MonoBehaviour
     IEnumerator faller()
     {
         anim.SetTrigger("fall");
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         Destroy(gameObject);
     }
 }

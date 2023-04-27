@@ -15,6 +15,7 @@ TagManager:
   - weakpoint
   - Audio
   - GameCanvas
+  - notice
   layers:
   - Default
   - TransparentFX

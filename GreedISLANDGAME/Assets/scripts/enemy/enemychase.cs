@@ -13,7 +13,13 @@ public class enemychase : MonoBehaviour
     {
         
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag != "Ground")
+        {
+            StartCoroutine(Destroyer());
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -37,4 +43,12 @@ public class enemychase : MonoBehaviour
             GetComponent<waypointFollower>().enabled = true;
         }
     }
+    IEnumerator Destroyer()
+    {
+        yield return new WaitForSeconds(4);
+        Destroy(gameObject);
+
+    }
+
+
 }

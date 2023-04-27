@@ -16,5 +16,6 @@ public class playerdamager : MonoBehaviour
                 health.TakeDamage(damage);
             }
         }
+        
     }
 }
