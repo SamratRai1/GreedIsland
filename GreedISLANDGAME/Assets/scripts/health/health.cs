@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class health : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class health : MonoBehaviour
     public float CurrentHealth { get; private set; }
     private Animator anim;
     public GameObject deatPanel;
+    public Button PauseButton;
     private bool dead;
     AudioManager audioManager;
    
@@ -39,6 +41,7 @@ public class health : MonoBehaviour
                 //transform.position = transform.position;
                 dead = true;
                 deatPanel.SetActive(true);
+                PauseButton.interactable = false;
                 anim.SetTrigger("die");
                 
             }
@@ -58,6 +61,7 @@ public class health : MonoBehaviour
     {
         audioManager.PlayeSfx(audioManager.resume);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        PauseButton.interactable = true;
         Time.timeScale = 1;
     }
     public void MainMenus()

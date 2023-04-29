@@ -3930,6 +3930,14 @@ PrefabInstance:
       propertyPath: deatPanel
       value: 
       objectReference: {fileID: 188686805}
+    - target: {fileID: 6454667444363767005, guid: ffeaf707718cdaf408082fc932a95394, type: 3}
+      propertyPath: PauseButton
+      value: 
+      objectReference: {fileID: 1506409632}
+    - target: {fileID: 6454667444363767005, guid: ffeaf707718cdaf408082fc932a95394, type: 3}
+      propertyPath: pauseButton
+      value: 
+      objectReference: {fileID: 963971270}
     - target: {fileID: 6454667445153753594, guid: ffeaf707718cdaf408082fc932a95394, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.19
@@ -10487,8 +10495,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280361216
-  m_fontColor: {r: 0, g: 0.12944102, b: 0.12944102, a: 1}
+    rgba: 4280550803
+  m_fontColor: {r: 0.5754717, g: 0.018458487, b: 0.14193806, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
