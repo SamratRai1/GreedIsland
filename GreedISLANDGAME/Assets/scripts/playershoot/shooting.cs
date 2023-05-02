@@ -21,7 +21,8 @@ public class shooting : MonoBehaviour
     {
 
         //  if(Input.GetKeyDown(KeyCode.Return)) {
-        if (Input.GetMouseButton(0) & playerMovement.canAttack()==false & cooldownTimer>attackCoolDown) { 
+        //if (Input.GetMouseButton(0) & playerMovement.canAttack()==false & cooldownTimer>attackCoolDown) { 
+        if (Input.GetKeyDown(KeyCode.Space) & playerMovement.canAttack()==false & cooldownTimer>attackCoolDown) { 
             Shoot();
         }
         cooldownTimer += Time.deltaTime;

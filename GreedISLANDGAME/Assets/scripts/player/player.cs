@@ -44,7 +44,7 @@ public class player : MonoBehaviour
         {
             transform.localScale = new Vector3(-0.35476f, 0.35476f, 0.35476f);
         }
-        if (Input.GetKey(KeyCode.Space) && grounded)
+        if (Input.GetKey(KeyCode.W) && grounded)
         {
             Jump();
 
@@ -101,7 +101,8 @@ public class player : MonoBehaviour
     public bool canAttack()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-        if (horizontalInput == 0)
+         if (horizontalInput == 0)
+        //if (Input.GetKeyDown(KeyCode.P))
         {
             return false;
         }

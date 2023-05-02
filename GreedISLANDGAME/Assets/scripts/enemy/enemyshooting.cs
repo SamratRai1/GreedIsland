@@ -13,13 +13,14 @@ public class enemyshooting : MonoBehaviour
 
     public Transform player;
     public Transform self;
+    public float playerdistance;
    
     private void Update()
     {
         float distance = Vector2.Distance(player.position, self.position);
       
         //  if(Input.GetKeyDown(KeyCode.Return)) {
-        if (cooldownTimer>attackCoolDown & distance<8) { 
+        if (cooldownTimer>attackCoolDown & distance< playerdistance) { 
             Shoot();
           
         }

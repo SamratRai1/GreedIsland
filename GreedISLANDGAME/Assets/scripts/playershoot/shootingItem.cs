@@ -12,7 +12,10 @@ public class shootingItem : MonoBehaviour
              collision.GetComponent<shootAction>().Action();
         if (collision.tag != "CheckPoint" & collision.tag != "notice")
         {
-            Destroy(gameObject);
+            if (collision.tag != "GoldCoin" & collision.tag != "SilverCoin" & collision.tag != "BronzeCoin")
+            {
+                Destroy(gameObject);
+            }
         }
     }
 

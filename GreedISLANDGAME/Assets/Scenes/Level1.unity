@@ -8753,7 +8753,7 @@ RectTransform:
   m_GameObject: {fileID: 1506409630}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2108675081}
@@ -11296,6 +11296,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4365028638820869884, guid: 2978e557f7b4d8349987e3f95e5f39ed, type: 3}
+      propertyPath: PauseButton
+      value: 
+      objectReference: {fileID: 1506409632}
     - target: {fileID: 4365028638820869884, guid: 2978e557f7b4d8349987e3f95e5f39ed, type: 3}
       propertyPath: nextSceneload
       value: 4

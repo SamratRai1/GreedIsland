@@ -44,10 +44,10 @@ GameObject:
   - component: {fileID: 1426818566612494013}
   - component: {fileID: 5198398642966144714}
   - component: {fileID: 8584693364137185238}
-  - component: {fileID: 5395376986494194609}
   - component: {fileID: 4444077634208003208}
   - component: {fileID: 2003528250401935610}
   - component: {fileID: 1054640169541972700}
+  - component: {fileID: 45870798374843147}
   m_Layer: 0
   m_Name: rhino
   m_TagString: Trap
@@ -181,33 +181,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.47332555, y: 0.27417424}
   m_EdgeRadius: 0
---- !u!114 &5395376986494194609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3175081306100023871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55653ad1a296abc4a872574d6c6ffe83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3175081306100023871}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &4444077634208003208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +233,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &45870798374843147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3175081306100023871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7139321abfd307b4abbaa51c5902234a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLife: 2
 --- !u!1 &3704449675098025707
 GameObject:
   m_ObjectHideFlags: 0

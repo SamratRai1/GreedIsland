@@ -1,13 +1,26 @@
 
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
+using UnityEngine.UI;
+using Button = UnityEngine.UI.Button;
+
 public class endcheckpoint : MonoBehaviour
 {
     private int nextSceneload;
     // Start is called before the first frame update
+    private GameObject endpanel;
+    public Button PauseButton;
     private void Start()
     {
         nextSceneload = SceneManager.GetActiveScene().buildIndex + 1;
+        endpanel = GameObject.FindWithTag("EndPanel");
+        if (endpanel != null)
+        {
+            endpanel.SetActive(false);
+
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -16,7 +29,14 @@ public class endcheckpoint : MonoBehaviour
             {
                 if (SceneManager.GetActiveScene().buildIndex == 5)
                 {
-                    Debug.Log("Game Ends");
+                    if (endpanel != null)
+                    {
+                        PauseButton.interactable = false;
+                        Time.timeScale = 0;
+                        endpanel.SetActive(true);
+
+                    }
+
                 }
                 else
                 {

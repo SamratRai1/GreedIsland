@@ -78,8 +78,8 @@ GameObject:
   - component: {fileID: 3994691995034499156}
   - component: {fileID: 3994691995034499147}
   - component: {fileID: 3994691995034499146}
-  - component: {fileID: 1624484136900394182}
   - component: {fileID: 6048049525081200301}
+  - component: {fileID: 3940375755016938975}
   m_Layer: 0
   m_Name: Chicken
   m_TagString: Trap
@@ -237,33 +237,6 @@ MonoBehaviour:
   - {fileID: 3994691995004908489}
   speed: 1
   bot: 1
---- !u!114 &1624484136900394182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3994691995034499144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55653ad1a296abc4a872574d6c6ffe83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3994691995034499144}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &6048049525081200301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,3 +250,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+--- !u!114 &3940375755016938975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3994691995034499144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7139321abfd307b4abbaa51c5902234a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLife: 1

@@ -23,7 +23,13 @@ public class CoinCounter : MonoBehaviour
         }
         coinText.text = ": " + currentCoins.ToString();
     }
+
     public void IncreaseCoins(int v)
+    {
+        IncreaseCoins(v, audioManager);
+    }
+
+    public void IncreaseCoins(int v, AudioManager audioManager)
     {
         audioManager.PlayeSfx(audioManager.coinCollect);
         currentCoins += v;

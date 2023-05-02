@@ -16,6 +16,8 @@ TagManager:
   - Audio
   - GameCanvas
   - notice
+  - playerarrow
+  - EndPanel
   layers:
   - Default
   - TransparentFX
