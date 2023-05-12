@@ -41,7 +41,8 @@ public class player : MonoBehaviour
             transform.localScale = new Vector3(0.35476f, 0.35476f, 0.35476f);
         }
         else if (horizontalInput < -.01f)
-        {
+       
+            {
             transform.localScale = new Vector3(-0.35476f, 0.35476f, 0.35476f);
         }
         if (Input.GetKey(KeyCode.W) && grounded)
@@ -49,6 +50,10 @@ public class player : MonoBehaviour
             Jump();
 
             audioManager.PlayeSfx(audioManager.playerJump);
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseGame();
         }
             anim.SetBool("isWalking", horizontalInput != 0);
             anim.SetBool("grounded", grounded);
@@ -111,14 +116,14 @@ public class player : MonoBehaviour
     public void PauseGame()
     {
         audioManager.PlayeSfx(audioManager.pause);
-        Debug.Log("Freezing time");
+       
         pausePanel.SetActive(true);
         Time.timeScale = 0;
     }
     public void ResumeGame()
     {
         audioManager.PlayeSfx(audioManager.resume);
-        Debug.Log("Freezing time");
+        
         pausePanel.SetActive(false);
         Time.timeScale = 1;
     }
