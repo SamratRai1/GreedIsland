@@ -8460,7 +8460,7 @@ PrefabInstance:
       objectReference: {fileID: 627255536}
     - target: {fileID: 3351081869103332676, guid: 4d9df4e6c4e35ab439b3629bd4889b14, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.29
+      value: 5.06
       objectReference: {fileID: 0}
     - target: {fileID: 4444077634208003208, guid: 4d9df4e6c4e35ab439b3629bd4889b14, type: 3}
       propertyPath: chaseDistance
